@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100vh;
+  background: linear-gradient(to top, #87ceeb, #e0f7ff);
+  position: relative;
+  overflow: hidden;
+  z-index: 22;
+}
+
+#toggleBtn {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#toggleBtn i {
+  font-size: 18px;
+}
+
+.active {
+  background: #06ccde !important;
+}
+
+nav {
+  padding: 15px 10px;
+  padding-right: 60px;
+  display: flex;
+}
+
+nav h2 {
+  font-size: 18px;
+  font-family: "Cabin", sans-serif;
+  color: #121314;
+  background: #87caed;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid #9e9d9d75;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+
+.text {
+  width: 50vw;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text h1 {
+  font-size: 12vw;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #32c4c0;
+}
+
+.text h1:nth-child(2) {
+  color: #3383fc;
+  margin-left: 180px;
+}
+
+.start-btn {
+  display: grid;
+  place-items: center;
+}
+
+.start-btn button {
+  margin-top: 80px;
+  border-radius: 7px;
+  font-size: 22px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 500;
+  display: grid;
+  place-items: center;
+  background: #E3DBBB;
+  position: relative;
+  padding: 8px 22px;
+  color: #070707;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.start-btn button::before {
+  content: "";
+  height: 0%;
+  width: 0%;
+  border-radius: 7px;
+  position: absolute;
+  background: #90c7e7;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+
+.start-btn button:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  position: absolute;
+  bottom: -7%;
+  right: 5%;
+  height: 420px;
+  width: 420px;
+  object-fit: contain;
+}
+
+
+.sun {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ffd93d, #ff8c00);
+  border-radius: 50%;
+  box-shadow:
+    0 0 30px #ffd93d,
+    0 0 60px #ff8c00,
+    0 0 100px rgba(255, 140, 0, 0.6);
+  z-index: -2;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 30px #ffd93d,
+      0 0 60px #ff8c00,
+      0 0 100px rgba(255, 140, 0, 0.6);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 50px #ffd93d,
+      0 0 90px #ff8c00,
+      0 0 140px rgba(255, 140, 0, 0.8);
+  }
+}
+
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 10px;
+}
+
+.cloud::after {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  right: 10px;
+}
+
+.cloud1 {
+  width: 120px;
+  height: 60px;
+  top: 50px;
+  left: 150px;
+}
+
+.cloud2 {
+  width: 150px;
+  height: 70px;
+  top: 220px;
+  right: 400px;
+}
+
+.cloud3 {
+  width: 100px;
+  height: 50px;
+  top: 200px;
+  left: 420px;
+  animation-duration: 50s;
+}
+
+
+.dark {
+  display: none;
+}
+
+.moon {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  width: 90px;
+  height: 90px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px #f1f5f9,
+    0 0 40px rgba(241, 245, 249, 0.6),
+    0 0 80px rgba(241, 245, 249, 0.3);
+}
+
+.moon::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 12px;
+  height: 10px;
+  background: #d1d5db;
+  border-radius: 50% 40% 60% 30% / 40% 60% 30% 50%;
+  box-shadow:
+    20px 10px 0 2px #d1d5db,
+    10px 30px 0 1px #cbd5e1,
+    30px 25px 0 2px #e2e8f0;
+}
+
+.stars-static {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.stars-static::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    50px 100px white,
+    150px 200px white,
+    300px 80px white,
+    500px 300px white,
+    700px 150px white,
+    900px 400px white,
+    1100px 200px white,
+    1300px 350px white,
+    1500px 120px white,
+    1700px 280px white;
+}
+
+.stars-moving {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  animation: moveStars 120s linear infinite;
+}
+
+.stars-moving::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    100px 50px white,
+    250px 180px white,
+    400px 100px white,
+    600px 250px white,
+    800px 120px white,
+    1000px 300px white,
+    1200px 80px white,
+    1400px 200px white,
+    1600px 150px white,
+    1800px 280px white;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  top: 20%;
+  left: 100px;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+  z-index: -1;
+}
+
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.star2 {
+  top: 40%;
+  left: 50%;
+}
+
+.star3 {
+  top: 60%;
+  left: 70%;
+}
+
